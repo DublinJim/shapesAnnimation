@@ -1,7 +1,9 @@
 package com.example.shapesannimation;
 
+import javafx.animation.ScaleTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -23,13 +25,15 @@ public class Controller implements Initializable {
         return circle;
     }
 
+    private static void rectAngleWidthBigger(Rectangle rectangle1) {
+        ScaleTransition scaler = new ScaleTransition(Duration.seconds(2), rectangle1);
+        scaler.setByX(2);
+        scaler.setByY(2);
+        scaler.play();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-        TranslateTransition translateTransition = new TranslateTransition();
-
-
 
 
         Rectangle rectangle1 = new Rectangle(100, 50);
@@ -52,14 +56,22 @@ public class Controller implements Initializable {
 
 
         Circle newSphere = new Circle(50);
+
+        TranslateTransition translateTransition = new TranslateTransition();
         translateTransition.setNode(newSphere);
         translateTransition.setByX(300);
         translateTransition.setByY(200);
         translateTransition.setDuration(Duration.millis(2000));
-
         translateTransition.play();
 
-        rootPane.getChildren().addAll(rectangle1, circle1, circle, circle2,newSphere);
+
+
+
+        rootPane.getChildren().addAll(rectangle1, circle1, circle, circle2, newSphere);
+
+        Button btn1 = new Button("Scale Rectangle");
+        btn1.setOnAction(e -> rectAngleWidthBigger(rectangle1));
+        rootPane.getChildren().addAll(btn1);
 
 
     }
