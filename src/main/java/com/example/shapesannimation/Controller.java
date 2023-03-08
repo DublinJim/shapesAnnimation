@@ -13,11 +13,17 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Rectangle rectangle = new Rectangle(100,50,Paint.valueOf("#5c7eb5"));
-        rectangle.setX(100);
-        rectangle.setY(50);
-        rectangle.setArcHeight(20);
-        rectangle.setArcWidth(20);
-        rootPane.getChildren().add(rectangle);
+        Rectangle rectangle1 = new Rectangle(100,50);
+        rectangle1.setX(100);
+        rectangle1.setY(50);
+        rectangle1.setArcHeight(20);
+        rectangle1.setArcWidth(20);
+        rectangle1.setFill(Paint.valueOf("#5c7eb5"));
+
+
+
+
+
+        rootPane.getChildren().add(rectangle1);
     }
 }
