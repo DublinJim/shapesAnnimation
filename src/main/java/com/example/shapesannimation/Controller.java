@@ -1,9 +1,13 @@
 package com.example.shapesannimation;
 
+import javafx.animation.TranslateTransition;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -11,9 +15,24 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
     public AnchorPane rootPane;
 
+    private static Circle getCircle() {
+        Circle circle = new Circle(10.0, Paint.valueOf("#93291b"));
+
+        circle.setLayoutX(150);
+        circle.setLayoutY(100);
+        return circle;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Rectangle rectangle1 = new Rectangle(100,50);
+
+
+        TranslateTransition translateTransition = new TranslateTransition();
+
+
+
+
+        Rectangle rectangle1 = new Rectangle(100, 50);
         rectangle1.setX(100);
         rectangle1.setY(50);
         rectangle1.setArcHeight(20);
@@ -21,9 +40,27 @@ public class Controller implements Initializable {
         rectangle1.setFill(Paint.valueOf("#5c7eb5"));
 
 
+        Circle circle = getCircle();
+        Circle circle2 = getCircle();
+
+        circle2.setLayoutY(300);
+        circle2.setFill(Color.AQUA);
+
+        Circle circle1 = new Circle(10.0, Paint.valueOf("#93291b"));
+        circle1.setLayoutX(250);
+        circle1.setLayoutY(200);
 
 
+        Circle newSphere = new Circle(50);
+        translateTransition.setNode(newSphere);
+        translateTransition.setByX(300);
+        translateTransition.setByY(200);
+        translateTransition.setDuration(Duration.millis(2000));
 
-        rootPane.getChildren().add(rectangle1);
+        translateTransition.play();
+
+        rootPane.getChildren().addAll(rectangle1, circle1, circle, circle2,newSphere);
+
+
     }
 }

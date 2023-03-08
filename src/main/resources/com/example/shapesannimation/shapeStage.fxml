@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.layout.AnchorPane?>
-
-
-<AnchorPane fx:id="rootPane" fx:controller="com.example.shapesannimation.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="892.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane fx:id="rootPane" fx:controller="com.example.shapesannimation.Controller" maxHeight="-Infinity"
+            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="892.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"/>
