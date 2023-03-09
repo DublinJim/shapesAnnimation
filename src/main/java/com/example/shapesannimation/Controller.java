@@ -12,6 +12,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -19,12 +20,14 @@ public class Controller implements Initializable {
     private static Button btn1;
     public AnchorPane rootPane;
 
-    ///////////////////////////////////////////////methods////////////////////////////////////
+    ////////////////////////////////////methods////////////////////////////////////
     private static Circle getCircle() {
         Circle circle = new Circle(10.0, Paint.valueOf("#93291b"));
         circle.setStroke(Color.BLACK);
-        circle.setLayoutX(150);
-        circle.setLayoutY(100);
+        Random random = new Random();
+        int newPos = random.nextInt(400);
+        circle.setLayoutX(newPos);
+        circle.setLayoutY(newPos);
         return circle;
     }
 
@@ -38,7 +41,7 @@ public class Controller implements Initializable {
 
         scaler.play();
         isScaled = true;
-        btn1.setText("Else");
+        btn1.setText("Change color");
 
         btn1.setOnAction(e -> {
             rectangle1.setFill(Color.CORAL);
@@ -49,18 +52,18 @@ public class Controller implements Initializable {
     private static void moveCircle(Circle newSphere) {
         TranslateTransition translateTransition = new TranslateTransition();
         translateTransition.setNode(newSphere);
-
-        translateTransition.setByX(500);
+        translateTransition.setByX(450);
         translateTransition.setByY(500);
-
         translateTransition.setDuration(Duration.millis(2000));
+
         translateTransition.play();
     }
 
+    ////////////////////////////////////methods end////////////////////////////////////
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        btn1 = new Button("Scaler");
-        btn1.setPrefWidth(200.0);
+        btn1 = new Button("Scale");
+        btn1.setPrefWidth(150.0);
 
         Rectangle rectangle1 = new Rectangle(100, 50);
         rectangle1.setX(100);
@@ -71,7 +74,7 @@ public class Controller implements Initializable {
         rectangle1.setStroke(Color.BLACK);
 
 
-        Circle circle = getCircle();
+        Circle circleInRectangle = getCircle();
         Circle circle2 = getCircle();
 
         circle2.setLayoutY(300);
@@ -90,11 +93,11 @@ public class Controller implements Initializable {
         newSphere.setStroke(Color.BLACK);
 
 
-        rootPane.getChildren().addAll(rectangle1, circle1, circle, circle2, newSphere);
+        rootPane.getChildren().addAll(rectangle1, circle1, circleInRectangle, circle2, newSphere);
 
 
         btn1.setText("Scale Rectangle");
-        btn1.setLayoutX(50);
+        btn1.setLayoutX(60);
         btn1.setLayoutY(200);
 
         btn1.setOnAction(e -> rectAngleWidthBigger(rectangle1));
