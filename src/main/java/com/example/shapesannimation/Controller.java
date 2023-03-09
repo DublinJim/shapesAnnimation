@@ -15,8 +15,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+    private static boolean isScaled;
+    private static Button btn1;
     public AnchorPane rootPane;
 
+    ///////////////////////////////////////////////methods////////////////////////////////////
     private static Circle getCircle() {
         Circle circle = new Circle(10.0, Paint.valueOf("#93291b"));
         circle.setStroke(Color.BLACK);
@@ -28,14 +31,14 @@ public class Controller implements Initializable {
     private static void rectAngleWidthBigger(Rectangle rectangle1) {
         ScaleTransition scaler = new ScaleTransition(Duration.seconds(2), rectangle1);
 
-        double xfactor = scaler.getByX();
-        double yfactor = scaler.getByY();
-
-
-        scaler.setByX(2);
-        scaler.setByY(2);
-
+        if (!isScaled) {//if scaled is NOT true
+            scaler.setByX(2);
+            scaler.setByY(2);
+        }
         scaler.play();
+        isScaled = true;
+        btn1.setDisable(true);
+
     }
 
     @Override
@@ -63,17 +66,16 @@ public class Controller implements Initializable {
 
         Circle newSphere = new Circle(50);
 
-        TranslateTransition translateTransition = new TranslateTransition();
-        translateTransition.setNode(newSphere);
-        translateTransition.setByX(300);
-        translateTransition.setByY(200);
-        translateTransition.setDuration(Duration.millis(2000));
-        translateTransition.play();
+        moveCircle(newSphere);
+
+        newSphere.setFill(Color.CORNSILK);
+        newSphere.setStroke(Color.BLACK);
 
 
         rootPane.getChildren().addAll(rectangle1, circle1, circle, circle2, newSphere);
 
-        Button btn1 = new Button("Scale Rectangle");
+
+        btn1 = new Button("Scale Rectangle");
         btn1.setLayoutX(100);
         btn1.setLayoutY(145);
 
@@ -81,5 +83,16 @@ public class Controller implements Initializable {
         rootPane.getChildren().addAll(btn1);
 
 
+    }
+
+    private static void moveCircle(Circle newSphere) {
+        TranslateTransition translateTransition = new TranslateTransition();
+        translateTransition.setNode(newSphere);
+
+        translateTransition.setByX(500);
+        translateTransition.setByY(500);
+
+        translateTransition.setDuration(Duration.millis(2000));
+        translateTransition.play();
     }
 }
