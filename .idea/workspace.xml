@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca36e129-ea6c-4f55-994e-5d9211175c0a" name="Changes" comment="set strokes and disable node">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shapesannimation/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shapesannimation/Controller.java" afterDir="false" />
-    </list>
+    <list default="true" id="ca36e129-ea6c-4f55-994e-5d9211175c0a" name="Changes" comment="adds random factors" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678393252324</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adds random factors">
+      <created>1678394975202</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678394975202</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -139,6 +143,7 @@
     <MESSAGE value="validation the scale of the rectangle" />
     <MESSAGE value="addes a 'once'" />
     <MESSAGE value="set strokes and disable node" />
-    <option name="LAST_COMMIT_MESSAGE" value="set strokes and disable node" />
+    <MESSAGE value="adds random factors" />
+    <option name="LAST_COMMIT_MESSAGE" value="adds random factors" />
   </component>
 </project>

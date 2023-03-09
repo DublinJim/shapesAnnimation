@@ -29,6 +29,7 @@ public class Controller implements Initializable {
         circle.setLayoutX(newPos);
         circle.setLayoutY(newPos);
         return circle;
+
     }
 
     private static void rectAngleWidthBigger(Rectangle rectangle1) {
