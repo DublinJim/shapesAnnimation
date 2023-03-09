@@ -35,15 +35,32 @@ public class Controller implements Initializable {
             scaler.setByX(2);
             scaler.setByY(2);
         }
+
         scaler.play();
         isScaled = true;
-        btn1.setDisable(true);
+        btn1.setText("Else");
 
+        btn1.setOnAction(e -> {
+            rectangle1.setFill(Color.CORAL);
+            btn1.setDisable(true);
+        });
+    }
+
+    private static void moveCircle(Circle newSphere) {
+        TranslateTransition translateTransition = new TranslateTransition();
+        translateTransition.setNode(newSphere);
+
+        translateTransition.setByX(500);
+        translateTransition.setByY(500);
+
+        translateTransition.setDuration(Duration.millis(2000));
+        translateTransition.play();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        btn1 = new Button("Scaler");
+        btn1.setPrefWidth(200.0);
 
         Rectangle rectangle1 = new Rectangle(100, 50);
         rectangle1.setX(100);
@@ -51,6 +68,7 @@ public class Controller implements Initializable {
         rectangle1.setArcHeight(20);
         rectangle1.setArcWidth(20);
         rectangle1.setFill(Paint.valueOf("#5c7eb5"));
+        rectangle1.setStroke(Color.BLACK);
 
 
         Circle circle = getCircle();
@@ -75,24 +93,13 @@ public class Controller implements Initializable {
         rootPane.getChildren().addAll(rectangle1, circle1, circle, circle2, newSphere);
 
 
-        btn1 = new Button("Scale Rectangle");
-        btn1.setLayoutX(100);
-        btn1.setLayoutY(145);
+        btn1.setText("Scale Rectangle");
+        btn1.setLayoutX(50);
+        btn1.setLayoutY(200);
 
         btn1.setOnAction(e -> rectAngleWidthBigger(rectangle1));
         rootPane.getChildren().addAll(btn1);
 
 
-    }
-
-    private static void moveCircle(Circle newSphere) {
-        TranslateTransition translateTransition = new TranslateTransition();
-        translateTransition.setNode(newSphere);
-
-        translateTransition.setByX(500);
-        translateTransition.setByY(500);
-
-        translateTransition.setDuration(Duration.millis(2000));
-        translateTransition.play();
     }
 }

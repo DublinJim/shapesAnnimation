@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca36e129-ea6c-4f55-994e-5d9211175c0a" name="Changes" comment="validation the scale of the rectangle">
+    <list default="true" id="ca36e129-ea6c-4f55-994e-5d9211175c0a" name="Changes" comment="addes a 'once'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/shapesannimation/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/shapesannimation/Controller.java" afterDir="false" />
     </list>
@@ -113,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678308569999</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="addes a 'once'">
+      <created>1678391401350</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678391401350</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -123,7 +130,8 @@
     <MESSAGE value="adds animation to a circle" />
     <MESSAGE value="scales a rectangle" />
     <MESSAGE value="validation the scale of the rectangle" />
-    <option name="LAST_COMMIT_MESSAGE" value="validation the scale of the rectangle" />
+    <MESSAGE value="addes a 'once'" />
+    <option name="LAST_COMMIT_MESSAGE" value="addes a 'once'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -132,6 +140,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/example/shapesannimation/Controller.java</url>
           <line>37</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/shapesannimation/Controller.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
